@@ -4,12 +4,18 @@
 
 ## Setup
 
-Host OS is assumed to be Ubuntu 14, and [Perl](http://perl.org) already installed.
+Host OS is assumed to be Ubuntu 14, launch the following commands as root
 
-Enable *perl* to run a server on port 80
+Install deps
 
 ```
-sudo setcap cap_net_bind_service=ep $(which perl)
+apt-get install git make perl -y
+```
+
+Enable every user to run a *perl* server on port 80
+
+```
+setcap cap_net_bind_service=ep $(which perl)
 ```
 
 Install [Mojolicious](http://mojolicious.org)
